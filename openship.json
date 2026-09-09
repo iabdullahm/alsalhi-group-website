@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "productionMode": "static",
+  "routes": {
+    "rewrites": [
+      { "source": "/:path*", "destination": "/index.html" }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+node_modules
+dist
+.vercel
+.env
+.env.*
+!.env.example
+*.zip
+_to_delete/
+_rmtest.txt
+.DS_Store
+Salhi Group All Logos/
