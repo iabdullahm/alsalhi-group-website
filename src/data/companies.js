@@ -1,17 +1,20 @@
 /* ============================================================
-   THE FOUR OPERATING COMPANIES.
+   THE FIVE OPERATING COMPANIES.
    Source: company profile + detailed UX/content spec provided by
    Abdullah, 2026-08-25 / 2026-08-31, plus the official logo pack
-   and brand colour sheet supplied 2026-09-03, aligned to the
-   confirmed sitemap document supplied 2026-09-09 (Elite Resource
-   uses the Al Salhi Group mark as a placeholder logo until its own
-   is supplied. Real Estate Development is represented by the Al
-   Salhi Group mark itself and drops "Al Salhi" from its own name,
-   since it is the Group's own real estate division rather than a
-   separately branded subsidiary).
+   and brand colour sheet supplied 2026-09-03, updated per the
+   revised sitemap document supplied 2026-09-13 which added the
+   AI Software subsidiary and moved Elite Resource into the
+   Industry, Development & Investment pillar. Elite Resource's own
+   logo (distinct from Elite Industrial's) was supplied 2026-09-14.
+   AI Software has no logo yet. Real Estate Development is
+   represented by the Al Salhi Group mark itself and drops "Al
+   Salhi" from its own name, since it is the Group's own real
+   estate division rather than a separately branded subsidiary.
    ============================================================ */
 
 import hubMediaLogo from '../assets/logos/hub-media.png'
+import eliteResourceLogo from '../assets/logos/elite-resource.png'
 import eliteIndustrialLogo from '../assets/logos/elite-industrial.png'
 import asgIcon from '../assets/logos/asg-icon.png'
 
@@ -70,11 +73,65 @@ export const companies = [
     accent: '#6fb3c7',
   },
   {
-    id: 'elite-resource',
-    slug: 'elite-resource',
+    id: 'ai-software',
+    slug: 'ai-software',
     index: '02',
     pillar: 'media-people',
-    logo: eliteIndustrialLogo,
+    logoIsPlaceholder: true,
+    name: { en: 'AI Software', ar: 'AI Software' },
+    shortName: { en: 'AI Software', ar: 'AI Software' },
+    tagline: { en: 'Smart Software. Practical Solutions.', ar: 'برمجيات ذكية. حلول عملية.' },
+    heroTagline: { en: 'Smart Software. Practical Solutions.', ar: 'برمجيات ذكية. حلول عملية.' },
+    summary: {
+      en: 'The Group’s technology arm, developing software and AI-powered digital solutions that help organizations streamline processes, improve efficiency, and make smarter decisions.',
+      ar: 'الذراع التقني للمجموعة، يطوّر برمجيات وحلولاً رقمية مدعومة بالذكاء الاصطناعي تساعد المؤسسات على تبسيط عملياتها، وتحسين كفاءتها، واتخاذ قرارات أذكى.',
+    },
+    overview: {
+      en: 'AI Software is the technology arm of Al Salhi Group, providing software and AI-powered digital solutions designed to simplify operations, improve efficiency, and support smarter business decisions.',
+      ar: 'AI Software هي الذراع التقني لمجموعة الصالحي، وتقدّم برمجيات وحلولاً رقمية مدعومة بالذكاء الاصطناعي مصمّمة لتبسيط العمليات، وتحسين الكفاءة، ودعم قرارات الأعمال الأذكى.',
+    },
+    // Note: the client brief listed capability titles only — short
+    // descriptions below are drafted to match sibling companies'
+    // format and should be reviewed/confirmed.
+    capabilities: [
+      {
+        title: { en: 'Custom Software Solutions', ar: 'حلول برمجية مخصصة' },
+        text: { en: 'Bespoke applications designed around each client’s specific operational workflow and goals.', ar: 'تطبيقات مصممة خصيصاً بما يتناسب مع سير العمل التشغيلي وأهداف كل عميل.' },
+      },
+      {
+        title: { en: 'Business Process Automation', ar: 'أتمتة العمليات التجارية' },
+        text: { en: 'Automating repetitive operational and administrative tasks to reduce cost and manual effort.', ar: 'أتمتة المهام التشغيلية والإدارية المتكررة لتقليل التكلفة والجهد اليدوي.' },
+      },
+      {
+        title: { en: 'AI-Powered Digital Tools', ar: 'أدوات رقمية مدعومة بالذكاء الاصطناعي' },
+        text: { en: 'Applying machine learning and AI models to support faster, data-driven decision-making.', ar: 'توظيف نماذج التعلم الآلي والذكاء الاصطناعي لدعم اتخاذ قرارات أسرع وقائمة على البيانات.' },
+      },
+      {
+        title: { en: 'Web and Mobile Applications', ar: 'تطبيقات الويب والجوال' },
+        text: { en: 'Designing and building responsive web platforms and mobile applications end-to-end.', ar: 'تصميم وبناء منصات ويب وتطبيقات جوال متجاوبة من الألف إلى الياء.' },
+      },
+      {
+        title: { en: 'Systems Integration', ar: 'تكامل الأنظمة' },
+        text: { en: 'Connecting existing business systems and data sources into one coherent, reliable technology environment.', ar: 'ربط الأنظمة ومصادر البيانات القائمة في بيئة تقنية متكاملة وموثوقة.' },
+      },
+    ],
+    closing: {
+      en: 'AI Software begins by understanding the client’s operational challenges, then designs and delivers the right technology solution — from a single automated workflow to a fully integrated digital platform.',
+      ar: 'تبدأ AI Software بفهم التحديات التشغيلية للعميل، ثم تصمم وتقدّم الحل التقني المناسب — بدءاً من أتمتة سير عمل واحد وصولاً إلى منصة رقمية متكاملة بالكامل.',
+    },
+    ctaLabel: { en: 'Discuss Your Technology Needs with AI Software', ar: 'ناقش احتياجاتك التقنية مع AI Software' },
+    contactSector: {
+      en: 'AI Software (Software Development & AI Solutions)',
+      ar: 'AI Software (تطوير البرمجيات وحلول الذكاء الاصطناعي)',
+    },
+    accent: '#9490c9',
+  },
+  {
+    id: 'elite-resource',
+    slug: 'elite-resource',
+    index: '03',
+    pillar: 'industry-development',
+    logo: eliteResourceLogo,
     name: { en: 'Elite Resource', ar: 'إيليت ريسورس' },
     shortName: { en: 'Elite Resource', ar: 'إيليت ريسورس' },
     tagline: { en: 'The Right People. The Right Expertise. The Right Performance.', ar: 'الشخص المناسب. الخبرة المناسبة. الأداء المناسب.' },
@@ -123,7 +180,7 @@ export const companies = [
   {
     id: 'elite-industrial',
     slug: 'elite-industrial',
-    index: '03',
+    index: '04',
     pillar: 'industry-development',
     logo: eliteIndustrialLogo,
     name: { en: 'Elite Industrial & Construction', ar: 'إيليت للإنشاءات الصناعية' },
@@ -174,7 +231,7 @@ export const companies = [
   {
     id: 'real-estate',
     slug: 'real-estate',
-    index: '04',
+    index: '05',
     pillar: 'industry-development',
     logo: asgIcon,
     name: { en: 'Real Estate Development', ar: 'التطوير العقاري' },

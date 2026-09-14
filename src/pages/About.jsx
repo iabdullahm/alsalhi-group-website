@@ -26,21 +26,6 @@ export default function About() {
         </Reveal>
       </section>
 
-      <section className="section" id="chairmans-message">
-        <Reveal as="div" className="container chairman">
-          <div>
-            <span className="eyebrow">{t(sections.chairman)}</span>
-            <p className="chairman__quote about-chairman-quote">“{t(group.chairman.paragraphs[0])}”</p>
-            <p className="chairman__sig">— {t(group.chairman.role)}</p>
-          </div>
-          <div className="chairman__body">
-            {group.chairman.paragraphs.slice(1).map((p, i) => (
-              <p key={i}>{t(p)}</p>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
       <section className="section section--alt">
         <Reveal as="div" className="container two-col vision-mission">
           <div>

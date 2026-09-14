@@ -302,6 +302,23 @@
 .chairman__body p { color: var(--c-gray); margin-bottom: var(--s-3); }
 @media (max-width: 900px) { .chairman { grid-template-columns: 1fr; } }
 
+/* Chairman photo + signature — Home "Leadership Perspective" section.
+   Hidden until group.chairman.photo / .signature assets are supplied. */
+.chairman__photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--s-3);
+  border: 2px solid var(--c-gold-line);
+}
+.chairman__signature {
+  display: block;
+  max-width: 160px;
+  height: auto;
+  margin-top: var(--s-3);
+}
+
 /* About page's full Chairman's Message quote gets a stronger, more
    deliberate hierarchy than the homepage teaser — thin brand-orange
    rule, same colour already used for accents/eyebrows. */

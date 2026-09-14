@@ -63,16 +63,16 @@ export const group = {
     pillars: [
       {
         id: 'media-people',
-        title: { en: 'Media, People & Business Support', ar: 'الإعلام، والأفراد، ودعم الأعمال' },
+        title: { en: 'Media & Business Support', ar: 'الإعلام ودعم الأعمال' },
         subtitle: {
           en: 'Empowering brand presence, human capital, and operational continuity.',
           ar: 'تعزيز الحضور، ورأس المال البشري، واستمرارية التشغيل.',
         },
         text: {
-          en: 'Through HUB Media & Creative and Elite Resource, the Group supports organizations in building their public presence, communicating with their audiences, organizing professional experiences, and securing the talent and operational capabilities required to run their businesses.',
-          ar: 'من خلال HUB للإعلام والإبداع وإيليت ريسورس، تدعم المجموعة المؤسسات في بناء حضورها العام، والتواصل مع جمهورها، وتنظيم تجارب احترافية، وتأمين الكفاءات والقدرات التشغيلية اللازمة لإدارة أعمالها.',
+          en: 'Through HUB Media & Creative and AI Software, the Group supports organizations in building their public presence, communicating with their audiences, and adopting smart digital solutions that improve operational efficiency.',
+          ar: 'من خلال HUB للإعلام والإبداع وAI Software، تدعم المجموعة المؤسسات في بناء حضورها العام، والتواصل مع جمهورها، وتبنّي حلول رقمية ذكية ترفع من كفاءتها التشغيلية.',
         },
-        companies: ['hub-media', 'elite-resource'],
+        companies: ['hub-media', 'ai-software'],
       },
       {
         id: 'industry-development',
@@ -82,10 +82,10 @@ export const group = {
           ar: 'بناء البنية التحتية، وتحديث الأصول الصناعية، وصياغة الفرص العقارية.',
         },
         text: {
-          en: 'Through Elite Industrial & Construction and Real Estate Development, the Group supports industrial projects, facility development, real estate opportunities, and investment concepts.',
-          ar: 'من خلال إيليت للإنشاءات الصناعية والتطوير العقاري، تدعم المجموعة المشاريع الصناعية، وتطوير المرافق، والفرص العقارية، والمفاهيم الاستثمارية.',
+          en: 'Through Elite Resource, Elite Industrial & Construction, and Real Estate Development, the Group supports workforce operations, industrial projects, facility development, real estate opportunities, and investment concepts.',
+          ar: 'من خلال إيليت ريسورس، وإيليت للإنشاءات الصناعية، والتطوير العقاري، تدعم المجموعة عمليات القوى العاملة، والمشاريع الصناعية، وتطوير المرافق، والفرص العقارية، والمفاهيم الاستثمارية.',
         },
-        companies: ['elite-industrial', 'real-estate'],
+        companies: ['elite-resource', 'elite-industrial', 'real-estate'],
       },
     ],
   },
@@ -159,8 +159,17 @@ export const group = {
     role: { en: 'Chairman of the Board | Al Salhi Group', ar: 'رئيس مجلس الإدارة | مجموعة الصالحي' },
     // Name intentionally omitted — not provided in the source content.
 
-    // Short pull-quote used on the Home "Executive Perspective" section —
-    // distinct from the full message below, shown on the About page.
+    // Per the 2026-09-13 sitemap revision, the Chairman's message now
+    // lives ONLY on the Home page (quote + full paragraphs combined) —
+    // the separate full-statement section was removed from the About
+    // page. Photo/signature assets are pending from the client; these
+    // stay undefined until supplied, and Home.jsx only renders them
+    // when present.
+    photo: undefined,
+    signature: undefined,
+
+    // Short pull-quote used on the Home "Executive Perspective" section,
+    // shown together with the paragraphs below.
     homeQuote: {
       en: 'We believe sustainable business success begins with a clear vision and is achieved through genuine capabilities that transform market opportunities into lasting value. Our objective is not simply to execute work, but to build an enduring platform of expertise, trust, and shared growth for Oman’s future.',
       ar: 'نؤمن بأن نجاح الأعمال المستدام يبدأ برؤية واضحة، ويتحقق من خلال قدرات حقيقية تُحوّل فرص السوق إلى قيمة دائمة. هدفنا لا يقتصر على تنفيذ الأعمال، بل يمتد إلى بناء منصة راسخة من الخبرة والثقة والنمو المشترك لمستقبل عُمان.',

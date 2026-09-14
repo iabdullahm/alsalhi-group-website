@@ -49,14 +49,20 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <section className="section">
+      <section className="section" id="chairmans-message">
         <Reveal as="div" className="container" style={{ maxWidth: '68ch' }}>
           <span className="eyebrow">{t(sections.leadership)}</span>
+          {group.chairman.photo && (
+            <img className="chairman__photo" src={group.chairman.photo} alt={t(group.chairman.role)} />
+          )}
           <p className="chairman__quote">“{t(group.chairman.homeQuote)}”</p>
+          {group.chairman.paragraphs.map((p, i) => (
+            <p key={i} className="t-lead" style={{ marginTop: 'var(--s-3)' }}>{t(p)}</p>
+          ))}
           <p className="chairman__sig">— {t(group.chairman.role)}</p>
-          <Link to="/about#chairmans-message" className="btn btn--ghost btn--arrow" style={{ marginTop: '1.5rem' }}>
-            {t(cta.readFullMessage)}
-          </Link>
+          {group.chairman.signature && (
+            <img className="chairman__signature" src={group.chairman.signature} alt="" />
+          )}
         </Reveal>
       </section>
 
