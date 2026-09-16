@@ -20,6 +20,8 @@ import hubSoftwareLogo from '../assets/logos/hub-software.png'
 import eliteResourceLogo from '../assets/logos/elite-resource.png'
 import eliteIndustrialLogo from '../assets/logos/elite-industrial.png'
 import asgIcon from '../assets/logos/asg-icon.png'
+import rafidPreview from '../assets/projects/rafid-preview.png'
+import cafeqrPreview from '../assets/projects/cafeqr-preview.png'
 
 export const companies = [
   {
@@ -141,7 +143,8 @@ export const companies = [
         },
         status: 'in-progress',
         url: 'https://app.rafidsystem.com/c/smart-home-real-estate-demo/dashboard',
-        image: undefined,
+        // Real dashboard screenshot supplied 2026-09-16.
+        image: rafidPreview,
         // Picks the abstract, decorative preview pattern rendered when no
         // screenshot is available yet — see ProductPreview in CompanyPage.jsx.
         visual: 'dashboard',
@@ -154,7 +157,8 @@ export const companies = [
         },
         status: 'live',
         url: 'https://www.cafe-qr.com/',
-        image: undefined,
+        // Real marketing-site screenshot supplied 2026-09-16.
+        image: cafeqrPreview,
         visual: 'menu',
       },
     ],
