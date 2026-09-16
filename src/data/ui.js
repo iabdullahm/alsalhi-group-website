@@ -19,6 +19,7 @@ export const cta = {
   sendMessage: { en: 'Send Message', ar: 'إرسال الرسالة' },
   backToCompanies: { en: 'Back to Companies', ar: 'العودة إلى الشركات' },
   ourServices: { en: 'Core Capabilities', ar: 'القدرات الأساسية' },
+  visitProject: { en: 'Visit', ar: 'زيارة' },
 }
 
 export const sections = {
@@ -36,6 +37,13 @@ export const sections = {
   glance: { en: 'Al Salhi Group at a Glance', ar: 'مجموعة الصالحي في لمحة' },
   services: { en: 'Services', ar: 'الخدمات' },
   contact: { en: 'Get in Touch', ar: 'تواصل معنا' },
+  projects: { en: 'Applications & Systems', ar: 'التطبيقات والأنظمة' },
+}
+
+/** Status labels used on a company's own "Applications & Systems" project cards. */
+export const projectStatusLabels = {
+  live: { en: 'Live', ar: 'مُفعّل' },
+  'in-progress': { en: 'In Progress', ar: 'قيد العمل' },
 }
 
 /** "Group at a Glance" — Strategic Integration. Specialized Execution. */
@@ -81,7 +89,7 @@ export const contactForm = {
     en: [
       'Group Strategic Partnership / Investment',
       'HUB Media (Advertising, Media, Production, Events)',
-      'AI Software (Software Development & AI Solutions)',
+      'HUB Software (Software Development & AI Solutions)',
       'Elite Resource (Industrial Workforce & Operational Manpower)',
       'Elite Industrial & Construction (Industrial Engineering, EPC & Rehabilitation)',
       'Real Estate Development (Asset Studies, Investment & Brokerage)',
@@ -89,7 +97,7 @@ export const contactForm = {
     ar: [
       'شراكة استراتيجية / استثمار في المجموعة',
       'HUB للإعلام (الإعلان، الإعلام، الإنتاج، الفعاليات)',
-      'AI Software (تطوير البرمجيات وحلول الذكاء الاصطناعي)',
+      'HUB سوفتوير (تطوير البرمجيات وحلول الذكاء الاصطناعي)',
       'إيليت ريسورس (القوى العاملة الصناعية والكوادر التشغيلية)',
       'إيليت للإنشاءات الصناعية (الهندسة الصناعية، وعقود EPC، والتأهيل)',
       'التطوير العقاري (دراسات الأصول، الاستثمار، والوساطة)',
@@ -128,8 +136,8 @@ export const quickContact = {
     message: { en: 'Project Brief / Message', ar: 'ملخص المشروع / الرسالة' },
   },
   sectorOptions: {
-    en: ['General Group Inquiry', 'HUB Media & Creative', 'AI Software — Software & AI Solutions', 'Elite Resource — Workforce Solutions', 'Elite Industrial & Construction', 'Real Estate Development'],
-    ar: ['استفسار عام عن المجموعة', 'HUB للإعلام والإبداع', 'AI Software — حلول البرمجيات والذكاء الاصطناعي', 'إيليت ريسورس — حلول القوى العاملة', 'إيليت للإنشاءات الصناعية', 'التطوير العقاري'],
+    en: ['General Group Inquiry', 'HUB Media & Creative', 'HUB Software — Software & AI Solutions', 'Elite Resource — Workforce Solutions', 'Elite Industrial & Construction', 'Real Estate Development'],
+    ar: ['استفسار عام عن المجموعة', 'HUB للإعلام والإبداع', 'HUB سوفتوير — حلول البرمجيات والذكاء الاصطناعي', 'إيليت ريسورس — حلول القوى العاملة', 'إيليت للإنشاءات الصناعية', 'التطوير العقاري'],
   },
   submit: { en: 'Submit Inquiry', ar: 'إرسال الاستفسار' },
 }
@@ -180,8 +188,8 @@ export const seo = {
     ar: { title: 'من نحن — مجموعة الصالحي', description: 'قصتنا ورؤيتنا ورسالتنا وقيمنا وكلمة رئيس مجلس الإدارة — الفلسفة وراء مجموعة الصالحي.' },
   },
   companies: {
-    en: { title: 'Our Companies — Al Salhi Group', description: 'HUB Media & Creative, AI Software, Elite Resource, Elite Industrial & Construction, and Real Estate Development.' },
-    ar: { title: 'شركاتنا — مجموعة الصالحي', description: 'HUB للإعلام والإبداع، وAI Software، وإيليت ريسورس، وإيليت للإنشاءات الصناعية، والتطوير العقاري.' },
+    en: { title: 'Our Companies — Al Salhi Group', description: 'HUB Media & Creative, HUB Software, Elite Resource, Elite Industrial & Construction, and Real Estate Development.' },
+    ar: { title: 'شركاتنا — مجموعة الصالحي', description: 'HUB للإعلام والإبداع، وHUB سوفتوير، وإيليت ريسورس، وإيليت للإنشاءات الصناعية، والتطوير العقاري.' },
   },
   contact: {
     en: { title: 'Contact — Al Salhi Group', description: 'Connect with Al Salhi Group — we’ll route your inquiry to the right company within the Group.' },

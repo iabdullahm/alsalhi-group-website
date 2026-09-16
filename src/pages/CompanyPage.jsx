@@ -4,7 +4,7 @@ import { useLang } from '../i18n/LanguageProvider.jsx'
 import Seo from '../components/Seo.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { companies, companyBySlug } from '../data/companies.js'
-import { sections, cta } from '../data/ui.js'
+import { sections, cta, projectStatusLabels } from '../data/ui.js'
 
 export default function CompanyPage() {
   const { t } = useLang()
@@ -59,6 +59,37 @@ export default function CompanyPage() {
           </div>
         </div>
       </section>
+
+      {company.projects && company.projects.length > 0 && (
+        <section className="section" style={{ '--accent': company.accent }}>
+          <div className="container">
+            <span className="eyebrow">{t(sections.projects)}</span>
+            <div className="value-grid">
+              {company.projects.map((project, i) => (
+                <Reveal as="div" className="value-card project-card" delay={i * 70} style={{ borderColor: 'var(--c-line)' }} key={i}>
+                  {project.image && (
+                    <div className="project-card__shot">
+                      <img src={project.image} alt={t(project.name)} loading="lazy" />
+                    </div>
+                  )}
+                  <div className="project-card__head">
+                    <p className="value-card__label" style={{ color: company.accent }}>{t(project.name)}</p>
+                    <span className={`project-card__status project-card__status--${project.status}`}>
+                      {t(projectStatusLabels[project.status])}
+                    </span>
+                  </div>
+                  <p className="value-card__text">{t(project.description)}</p>
+                  {project.url && (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-card__link">
+                      {t(cta.visitProject)} ↗
+                    </a>
+                  )}
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="section">
         <Reveal as="div" className="container" style={{ display: 'grid', gap: 'var(--s-4)' }}>

@@ -69,10 +69,10 @@ export const group = {
           ar: 'تعزيز الحضور، ورأس المال البشري، واستمرارية التشغيل.',
         },
         text: {
-          en: 'Through HUB Media & Creative and AI Software, the Group supports organizations in building their public presence, communicating with their audiences, and adopting smart digital solutions that improve operational efficiency.',
-          ar: 'من خلال HUB للإعلام والإبداع وAI Software، تدعم المجموعة المؤسسات في بناء حضورها العام، والتواصل مع جمهورها، وتبنّي حلول رقمية ذكية ترفع من كفاءتها التشغيلية.',
+          en: 'Through HUB Media & Creative and HUB Software, the Group supports organizations in building their public presence, communicating with their audiences, and adopting smart digital solutions that improve operational efficiency.',
+          ar: 'من خلال HUB للإعلام والإبداع وHUB سوفتوير، تدعم المجموعة المؤسسات في بناء حضورها العام، والتواصل مع جمهورها، وتبنّي حلول رقمية ذكية ترفع من كفاءتها التشغيلية.',
         },
-        companies: ['hub-media', 'ai-software'],
+        companies: ['hub-media', 'hub-software'],
       },
       {
         id: 'industry-development',

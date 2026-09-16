@@ -3,17 +3,20 @@
    Source: company profile + detailed UX/content spec provided by
    Abdullah, 2026-08-25 / 2026-08-31, plus the official logo pack
    and brand colour sheet supplied 2026-09-03, updated per the
-   revised sitemap document supplied 2026-09-13 which added the
-   AI Software subsidiary and moved Elite Resource into the
-   Industry, Development & Investment pillar. Elite Resource's own
-   logo (distinct from Elite Industrial's) was supplied 2026-09-14.
-   AI Software has no logo yet. Real Estate Development is
-   represented by the Al Salhi Group mark itself and drops "Al
-   Salhi" from its own name, since it is the Group's own real
-   estate division rather than a separately branded subsidiary.
+   revised sitemap document supplied 2026-09-13 which added a 5th
+   subsidiary and moved Elite Resource into the Industry,
+   Development & Investment pillar; that 5th subsidiary was
+   renamed from "AI Software" to "HUB Software" on 2026-09-14, at
+   which point both its logo and Elite Resource's own logo
+   (distinct from Elite Industrial's) were supplied. Real Estate
+   Development is represented by the Al Salhi Group mark itself
+   and drops "Al Salhi" from its own name, since it is the Group's
+   own real estate division rather than a separately branded
+   subsidiary.
    ============================================================ */
 
 import hubMediaLogo from '../assets/logos/hub-media.png'
+import hubSoftwareLogo from '../assets/logos/hub-software.png'
 import eliteResourceLogo from '../assets/logos/elite-resource.png'
 import eliteIndustrialLogo from '../assets/logos/elite-industrial.png'
 import asgIcon from '../assets/logos/asg-icon.png'
@@ -73,13 +76,13 @@ export const companies = [
     accent: '#6fb3c7',
   },
   {
-    id: 'ai-software',
-    slug: 'ai-software',
+    id: 'hub-software',
+    slug: 'hub-software',
     index: '02',
     pillar: 'media-people',
-    logoIsPlaceholder: true,
-    name: { en: 'AI Software', ar: 'AI Software' },
-    shortName: { en: 'AI Software', ar: 'AI Software' },
+    logo: hubSoftwareLogo,
+    name: { en: 'HUB Software', ar: 'HUB سوفتوير' },
+    shortName: { en: 'HUB Software', ar: 'HUB سوفتوير' },
     tagline: { en: 'Smart Software. Practical Solutions.', ar: 'برمجيات ذكية. حلول عملية.' },
     heroTagline: { en: 'Smart Software. Practical Solutions.', ar: 'برمجيات ذكية. حلول عملية.' },
     summary: {
@@ -87,8 +90,8 @@ export const companies = [
       ar: 'الذراع التقني للمجموعة، يطوّر برمجيات وحلولاً رقمية مدعومة بالذكاء الاصطناعي تساعد المؤسسات على تبسيط عملياتها، وتحسين كفاءتها، واتخاذ قرارات أذكى.',
     },
     overview: {
-      en: 'AI Software is the technology arm of Al Salhi Group, providing software and AI-powered digital solutions designed to simplify operations, improve efficiency, and support smarter business decisions.',
-      ar: 'AI Software هي الذراع التقني لمجموعة الصالحي، وتقدّم برمجيات وحلولاً رقمية مدعومة بالذكاء الاصطناعي مصمّمة لتبسيط العمليات، وتحسين الكفاءة، ودعم قرارات الأعمال الأذكى.',
+      en: 'HUB Software is the technology arm of Al Salhi Group, providing software and AI-powered digital solutions designed to simplify operations, improve efficiency, and support smarter business decisions.',
+      ar: 'HUB سوفتوير هي الذراع التقني لمجموعة الصالحي، وتقدّم برمجيات وحلولاً رقمية مدعومة بالذكاء الاصطناعي مصمّمة لتبسيط العمليات، وتحسين الكفاءة، ودعم قرارات الأعمال الأذكى.',
     },
     // Note: the client brief listed capability titles only — short
     // descriptions below are drafted to match sibling companies'
@@ -116,15 +119,41 @@ export const companies = [
       },
     ],
     closing: {
-      en: 'AI Software begins by understanding the client’s operational challenges, then designs and delivers the right technology solution — from a single automated workflow to a fully integrated digital platform.',
-      ar: 'تبدأ AI Software بفهم التحديات التشغيلية للعميل، ثم تصمم وتقدّم الحل التقني المناسب — بدءاً من أتمتة سير عمل واحد وصولاً إلى منصة رقمية متكاملة بالكامل.',
+      en: 'HUB Software begins by understanding the client’s operational challenges, then designs and delivers the right technology solution — from a single automated workflow to a fully integrated digital platform.',
+      ar: 'تبدأ HUB سوفتوير بفهم التحديات التشغيلية للعميل، ثم تصمم وتقدّم الحل التقني المناسب — بدءاً من أتمتة سير عمل واحد وصولاً إلى منصة رقمية متكاملة بالكامل.',
     },
-    ctaLabel: { en: 'Discuss Your Technology Needs with AI Software', ar: 'ناقش احتياجاتك التقنية مع AI Software' },
+    ctaLabel: { en: 'Discuss Your Technology Needs with HUB Software', ar: 'ناقش احتياجاتك التقنية مع HUB سوفتوير' },
     contactSector: {
-      en: 'AI Software (Software Development & AI Solutions)',
-      ar: 'AI Software (تطوير البرمجيات وحلول الذكاء الاصطناعي)',
+      en: 'HUB Software (Software Development & AI Solutions)',
+      ar: 'HUB سوفتوير (تطوير البرمجيات وحلول الذكاء الاصطناعي)',
     },
     accent: '#9490c9',
+    // Applications & systems built / in progress, supplied 2026-09-16.
+    // `image` stays undefined until a screenshot asset is supplied — the
+    // card renders without one until then (see logoIsPlaceholder pattern
+    // above for the same convention).
+    projects: [
+      {
+        name: { en: 'Rafid — Real Estate Management System', ar: 'نظام رافد لإدارة وتطوير العقارات' },
+        description: {
+          en: 'An integrated real estate management platform for the Omani market, with a smart dashboard covering units, tenants, and financial operations.',
+          ar: 'منصة متكاملة لإدارة العقارات موجهة للسوق العُماني، بلوحة تحكم ذكية تغطي الوحدات والمستأجرين والعمليات المالية.',
+        },
+        status: 'in-progress',
+        url: 'https://app.rafidsystem.com/c/smart-home-real-estate-demo/dashboard',
+        image: undefined,
+      },
+      {
+        name: { en: 'CafeQR', ar: 'كافي كيو آر (CafeQR)' },
+        description: {
+          en: 'A QR-based ordering system for cafés in Oman, letting customers browse the menu and order directly from their phone.',
+          ar: 'نظام طلب عبر رمز QR للمقاهي في عُمان، يتيح للعملاء تصفح القائمة وتقديم الطلب مباشرة من هواتفهم.',
+        },
+        status: 'live',
+        url: 'https://www.cafe-qr.com/',
+        image: undefined,
+      },
+    ],
   },
   {
     id: 'elite-resource',
