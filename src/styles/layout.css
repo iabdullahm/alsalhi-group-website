@@ -319,25 +319,152 @@
   margin-top: var(--s-3);
 }
 
-/* "Applications & Systems" project cards — company page (e.g. HUB Software). */
-.project-card { display: flex; flex-direction: column; }
-.project-card__shot {
-  width: calc(100% + var(--s-4) * 2);
-  margin: calc(var(--s-4) * -1) calc(var(--s-4) * -1) var(--s-3);
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
+/* ============================================================
+   COMPANY PAGE — hero, capabilities, Applications & Systems.
+   Redesigned 2026-09-16 for stronger desktop presence; reuses the
+   same tokens/utilities as the rest of the site (--s-*, --radius-*,
+   .btn, .eyebrow, .value-card) rather than introducing a parallel
+   system. Scoped to CompanyPage.jsx only — .page-hero and the other
+   shared primitives used by About/Contact/Companies/etc. are
+   untouched.
+   ============================================================ */
+
+/* ---- Hero: two-column on desktop, copy + abstract visual ---- */
+.company-hero-section {
+  position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
-  background: var(--c-line);
+  padding-block: clamp(3rem, 7vh, 5rem) clamp(3.5rem, 8vh, 6rem);
 }
-.project-card__shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.project-card__head {
-  display: flex;
+.company-hero-section::before {
+  content: '';
+  position: absolute;
+  top: -25%; inset-inline-end: -8%;
+  width: 50%; aspect-ratio: 1;
+  background: radial-gradient(ellipse, rgba(var(--c-secondary-rgb), 0.1), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.company-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--s-2);
-  margin-bottom: 0.5em;
+  gap: var(--s-6);
+  min-height: clamp(440px, 38vw, 600px);
 }
-.project-card__head .value-card__label { margin-bottom: 0; }
+.company-hero-copy { max-width: 60ch; }
+@media (max-width: 900px) {
+  .company-hero-grid { grid-template-columns: 1fr; min-height: 0; gap: var(--s-5); }
+  .company-hero-copy { max-width: none; }
+}
+
+/* Abstract "software interface" composition — plain divs, no images,
+   existing palette only. Purely decorative (aria-hidden). */
+.company-hero-visual {
+  position: relative;
+  height: clamp(280px, 30vw, 440px);
+}
+@media (max-width: 900px) { .company-hero-visual { height: clamp(220px, 55vw, 320px); margin-inline: auto; max-width: 420px; } }
+.hero-visual__panel {
+  position: absolute;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--c-line-strong);
+  background: #fff;
+  box-shadow: 0 30px 60px -24px rgba(23, 16, 31, 0.2);
+}
+.hero-visual__panel--back {
+  width: 66%;
+  height: 76%;
+  top: 16%;
+  inset-inline-start: 0;
+  background: rgba(var(--c-primary-rgb), 0.06);
+  border-color: var(--c-line);
+  box-shadow: none;
+  transform: rotate(-4deg);
+}
+.hero-visual__panel--main {
+  width: 76%;
+  height: 86%;
+  top: 0;
+  inset-inline-end: 0;
+  padding: var(--s-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.hero-visual__dots { display: flex; gap: 6px; }
+.hero-visual__dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--c-line-strong); }
+.hero-visual__row { height: 10px; border-radius: 6px; background: var(--c-bg-3); }
+.hero-visual__row--w70 { width: 70%; }
+.hero-visual__row--w45 { width: 45%; }
+.hero-visual__chart { display: flex; align-items: flex-end; gap: 10px; height: 34%; margin-top: auto; }
+.hero-visual__chart span {
+  flex: 1;
+  height: var(--h);
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, rgba(var(--c-secondary-rgb), 0.85), rgba(var(--c-secondary-rgb), 0.3));
+}
+.hero-visual__chips { display: flex; gap: 8px; }
+.hero-visual__chip { width: 44px; height: 20px; border-radius: 999px; background: rgba(var(--c-primary-rgb), 0.1); border: 1px solid var(--c-line); }
+.hero-visual__badge {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -4%;
+  inset-inline-start: 6%;
+  border-radius: var(--radius-md);
+  background: var(--bg-gradient);
+  box-shadow: 0 20px 40px -14px rgba(var(--c-secondary-rgb), 0.5);
+  transform: rotate(8deg);
+}
+
+/* ---- Core Capabilities: 3-up grid whose leftover last row centers
+   itself instead of hugging the start edge (flex, not CSS grid). ---- */
+.capabilities-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s-4); }
+.capabilities-grid > * { flex: 0 1 calc((100% - var(--s-4) * 2) / 3); min-width: 260px; }
+@media (max-width: 900px) { .capabilities-grid > * { flex-basis: calc((100% - var(--s-4)) / 2); } }
+@media (max-width: 600px) { .capabilities-grid > * { flex-basis: 100%; } }
+
+.capability-card { padding: var(--s-5) var(--s-4); }
+.capability-card__mark { display: block; width: 30px; height: 3px; border-radius: 3px; margin-bottom: var(--s-3); }
+
+/* ---- Applications & Systems: large "product" cards ---- */
+.products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-5); }
+@media (max-width: 900px) { .products-grid { grid-template-columns: 1fr; } }
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  background: var(--bg-card);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  padding: var(--s-4);
+  transition: transform var(--t-med), border-color var(--t-med), box-shadow var(--t-med);
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--c-secondary-rgb), 0.5);
+  box-shadow: 0 26px 50px -22px rgba(23, 16, 31, 0.2);
+}
+.product-card__preview {
+  position: relative;
+  border-radius: var(--radius-md);
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-line);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  padding: var(--s-4);
+  display: flex;
+}
+.product-card__preview img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; margin: calc(var(--s-4) * -1); flex: 1; }
+.product-card__body { display: flex; flex-direction: column; gap: var(--s-2); flex: 1; }
+.product-card__head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); }
+.product-card__name { font-size: var(--fs-h3); color: var(--c-paper); }
+.product-card__desc { color: var(--c-gray); font-size: var(--fs-small); flex: 1; }
+.product-card__cta { align-self: flex-start; margin-top: var(--s-2); }
+
 .project-card__status {
   flex-shrink: 0;
   font-size: 0.72rem;
@@ -350,14 +477,70 @@
 }
 .project-card__status--live { color: #2f8a4e; background: rgba(47, 138, 78, 0.12); }
 .project-card__status--in-progress { color: #b57e12; background: rgba(181, 126, 18, 0.12); }
-.project-card__link {
-  display: inline-block;
-  margin-top: var(--s-3);
-  color: var(--c-secondary);
-  font-weight: 600;
-  font-size: var(--fs-small);
+
+/* Abstract decorative previews standing in for a product screenshot
+   until one is supplied — geometry only, no invented copy/data. */
+.preview-mock { width: 100%; flex: 1; display: flex; flex-direction: column; gap: var(--s-3); }
+.preview-mock--dashboard .preview-mock__stats { display: flex; gap: var(--s-2); }
+.preview-mock--dashboard .preview-mock__stats span {
+  flex: 1;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(var(--c-primary-rgb), 0.08);
+  border: 1px solid var(--c-line);
 }
-.project-card__link:hover { text-decoration: underline; }
+.preview-mock--dashboard .preview-mock__stats span:first-child { background: rgba(var(--c-secondary-rgb), 0.14); border-color: var(--c-gold-line); }
+.preview-mock--dashboard .preview-mock__table { flex: 1; display: flex; flex-direction: column; gap: 8px; justify-content: center; }
+.preview-mock--dashboard .preview-mock__row {
+  height: 12px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid var(--c-line);
+  position: relative;
+  overflow: hidden;
+}
+.preview-mock--dashboard .preview-mock__row::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0; top: 0; bottom: 0;
+  width: 30%;
+  background: rgba(var(--c-primary-rgb), 0.12);
+}
+.preview-mock--menu { flex-direction: row; align-items: center; gap: var(--s-4); }
+.preview-mock__qr {
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
+  border-radius: 10px;
+  background:
+    repeating-linear-gradient(0deg, var(--c-paper) 0 6px, transparent 6px 12px),
+    repeating-linear-gradient(90deg, var(--c-paper) 0 6px, transparent 6px 12px);
+  background-blend-mode: multiply;
+  opacity: 0.85;
+  border: 1px solid var(--c-line-strong);
+}
+.preview-mock__lines { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.preview-mock__lines span { display: block; height: 10px; border-radius: 6px; background: #fff; border: 1px solid var(--c-line); }
+.preview-mock__lines span:nth-child(1) { width: 85%; }
+.preview-mock__lines span:nth-child(2) { width: 65%; }
+.preview-mock__lines span:nth-child(3) { width: 45%; }
+.preview-mock__pill { flex-shrink: 0; width: 60px; height: 26px; border-radius: 999px; background: var(--bg-gradient); }
+
+/* ---- Technology statement + CTA — restrained panel, not a banner ---- */
+.tech-statement-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--s-5);
+  background: var(--bg-card);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  padding: var(--s-5) var(--s-4);
+}
+.tech-statement-panel > * { min-width: 0; }
+.tech-statement-panel__text { color: var(--c-paper); font-weight: 500; max-width: 62ch; }
+.tech-statement-panel__cta { white-space: normal; justify-self: start; }
+@media (max-width: 760px) { .tech-statement-panel { grid-template-columns: 1fr; } }
 
 /* About page's full Chairman's Message quote gets a stronger, more
    deliberate hierarchy than the homepage teaser — thin brand-orange

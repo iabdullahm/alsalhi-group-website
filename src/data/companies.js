@@ -142,6 +142,9 @@ export const companies = [
         status: 'in-progress',
         url: 'https://app.rafidsystem.com/c/smart-home-real-estate-demo/dashboard',
         image: undefined,
+        // Picks the abstract, decorative preview pattern rendered when no
+        // screenshot is available yet — see ProductPreview in CompanyPage.jsx.
+        visual: 'dashboard',
       },
       {
         name: { en: 'CafeQR', ar: 'كافي كيو آر (CafeQR)' },
@@ -152,6 +155,7 @@ export const companies = [
         status: 'live',
         url: 'https://www.cafe-qr.com/',
         image: undefined,
+        visual: 'menu',
       },
     ],
   },
