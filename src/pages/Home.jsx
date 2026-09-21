@@ -10,10 +10,15 @@ import { cta, sections, glance, quickContact, contactForm, seo } from '../data/u
 export default function Home() {
   const { t } = useLang()
 
+  // Each "Rooted in Oman. / Built for Growth. / Driven by Vision." phrase
+  // renders on its own forced line (not just wherever it happens to wrap),
+  // with the final word of the last phrase kept in the highlight box.
   const headlineFull = t(group.hero.headline).trim()
-  const headlineWords = headlineFull.split(' ')
-  const headlineKeyword = headlineWords.pop()
-  const headlineRest = headlineWords.join(' ')
+  const headlinePhrases = headlineFull.split(/(?<=\.)\s+/).filter(Boolean)
+  const lastPhrase = headlinePhrases[headlinePhrases.length - 1] || headlineFull
+  const lastPhraseWords = lastPhrase.split(' ')
+  const headlineKeyword = lastPhraseWords.pop()
+  const lastPhraseRest = lastPhraseWords.join(' ')
 
   return (
     <>
@@ -23,7 +28,13 @@ export default function Home() {
         <div className="container hero__inner">
           <span className="t-pretitle">{t(group.hero.pretitle)}</span>
           <h1 className="t-h1 hero__headline">
-            {headlineRest} <span className="highlight-box">{headlineKeyword}</span>
+            {headlinePhrases.map((phrase, i) => (
+              <span className="hero__headline-line" key={i}>
+                {i === headlinePhrases.length - 1
+                  ? <>{lastPhraseRest} <span className="highlight-box">{headlineKeyword}</span></>
+                  : phrase}
+              </span>
+            ))}
           </h1>
           <p className="t-lead">{t(group.hero.sub)}</p>
           <div className="hero__actions">
@@ -89,7 +100,7 @@ export default function Home() {
                 {p.companies.map((slug, i) => {
                   const c = companyBySlug(slug)
                   return (
-                    <Reveal as={Link} to={`/companies/${c.slug}`} className="company-card" delay={i * 90} style={{ '--accent': c.accent }} key={slug}>
+                    <Reveal as={Link} to={`/companies/${c.slug}`} className="company-card" delay={i * 90} style={{ '--accent': c.accent, '--logo-scale': c.logoScale || 1 }} key={slug}>
                       {!c.logoIsPlaceholder && (
                         <span className="company-card__logo"><img src={c.logo} alt="" /></span>
                       )}

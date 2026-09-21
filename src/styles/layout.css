@@ -170,6 +170,10 @@
 }
 .hero .t-pretitle::before { display: none; }
 .hero__headline { margin-block: var(--s-2); }
+/* Each headline phrase ("Rooted in Oman." / "Built for Growth." /
+   "Driven by Vision.") forces its own line instead of wrapping
+   wherever it happens to fit. */
+.hero__headline-line { display: block; }
 .hero__actions { display: flex; gap: var(--s-3); flex-wrap: wrap; margin-top: var(--s-2); justify-content: center; }
 
 /* Page-hero (inner pages) gets a softer version of the same glow. */
@@ -265,7 +269,11 @@
 }
 .company-card:hover { border-color: rgba(var(--c-secondary-rgb), 0.55); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(23, 16, 31, 0.12); }
 .company-card:hover::before { opacity: 1; }
-.company-card__logo { height: 2.5rem; margin-bottom: 0.2em; position: relative; }
+/* --logo-scale (per-company, optional — see data/companies.js) lets a
+   logo whose own artwork is more square/compact (so it would otherwise
+   render narrower — and so visually smaller — than its wider-aspect
+   neighbors at the same fixed height) match their footprint. */
+.company-card__logo { height: calc(2.5rem * var(--logo-scale, 1)); margin-bottom: 0.2em; position: relative; }
 .company-card__logo img { height: 100%; width: auto; max-width: 100%; object-fit: contain; object-position: left center; }
 [dir='rtl'] .company-card__logo img { object-position: right center; }
 .company-card__index { font-size: var(--fs-label); color: var(--c-gray-dim); letter-spacing: var(--ls-label); position: relative; }

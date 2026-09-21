@@ -189,7 +189,7 @@ export default function CompanyPage() {
           <h2 className="eyebrow">{t(sections.portfolio)}</h2>
           <div className="related-companies">
             {related.map((c) => (
-              <Link to={`/companies/${c.slug}`} className="company-card" style={{ '--accent': c.accent }} key={c.id}>
+              <Link to={`/companies/${c.slug}`} className="company-card" style={{ '--accent': c.accent, '--logo-scale': c.logoScale || 1 }} key={c.id}>
                 {!c.logoIsPlaceholder && (
                   <span className="company-card__logo"><img src={c.logo} alt="" /></span>
                 )}

@@ -29,7 +29,7 @@ export default function Companies() {
                 {p.companies.map((slug, i) => {
                   const c = companyBySlug(slug)
                   return (
-                    <Reveal as={Link} to={`/companies/${c.slug}`} className="company-card" delay={i * 90} style={{ '--accent': c.accent }} key={slug}>
+                    <Reveal as={Link} to={`/companies/${c.slug}`} className="company-card" delay={i * 90} style={{ '--accent': c.accent, '--logo-scale': c.logoScale || 1 }} key={slug}>
                       {!c.logoIsPlaceholder && (
                         <span className="company-card__logo"><img src={c.logo} alt="" /></span>
                       )}

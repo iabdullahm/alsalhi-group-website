@@ -83,6 +83,11 @@ export const companies = [
     index: '02',
     pillar: 'media-people',
     logo: hubSoftwareLogo,
+    // This lockup's own artwork is more compact/square (icon + two-line
+    // wordmark) than its sibling logos, so at the same fixed card height
+    // it renders narrower and reads as smaller next to them — bump it up
+    // to match their visual footprint on the portfolio grid cards.
+    logoScale: 1.3,
     name: { en: 'HUB Software', ar: 'HUB سوفتوير' },
     shortName: { en: 'HUB Software', ar: 'HUB سوفتوير' },
     tagline: { en: 'Smart Software. Practical Solutions.', ar: 'برمجيات ذكية. حلول عملية.' },
