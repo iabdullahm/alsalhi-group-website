@@ -201,7 +201,16 @@
   gap: var(--s-4);
 }
 .stat-item { text-align: center; }
-.stat-item__title { font-size: var(--fs-h3); font-weight: 800; color: var(--c-paper); margin-bottom: 0.4em; }
+/* Sized (and capped) so the longest title — "National & Regional
+   Reach" — stays on one line at every width the 3-column grid is
+   active, keeping all three titles aligned on the same baseline. */
+.stat-item__title {
+  font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+  font-weight: 800;
+  color: var(--c-paper);
+  margin-bottom: 0.4em;
+  white-space: nowrap;
+}
 .stat-item__desc { color: var(--c-gray); font-size: var(--fs-small); }
 @media (max-width: 760px) {
   .stats-card { grid-template-columns: 1fr; }

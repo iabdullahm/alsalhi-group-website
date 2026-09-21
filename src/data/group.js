@@ -171,7 +171,7 @@ export const group = {
     // Short pull-quote used on the Home "Executive Perspective" section,
     // shown together with the paragraphs below.
     homeQuote: {
-      en: 'We believe sustainable business success begins with a clear vision and is achieved through genuine capabilities that transform market opportunities into lasting value. Our objective is not simply to execute work, but to build an enduring platform of expertise, trust, and shared growth for Oman’s future.',
+      en: 'We believe sustainable business success begins with a clear vision and is achieved through genuine capabilities that turn market opportunities into lasting value. Our objective is not simply to execute work, but to build an enduring platform of expertise, trust, and shared growth for Oman’s future.',
       ar: 'نؤمن بأن نجاح الأعمال المستدام يبدأ برؤية واضحة، ويتحقق من خلال قدرات حقيقية تُحوّل فرص السوق إلى قيمة دائمة. هدفنا لا يقتصر على تنفيذ الأعمال، بل يمتد إلى بناء منصة راسخة من الخبرة والثقة والنمو المشترك لمستقبل عُمان.',
     },
 
