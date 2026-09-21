@@ -291,32 +291,46 @@
 @media (max-width: 900px) { .value-grid--values { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .value-grid--values { grid-template-columns: 1fr; } }
 
+/* Leadership Perspective (Home) — photo left / text right once a photo
+   is supplied; a single wider text column until then. Widened from the
+   original 68ch single-column treatment for a more balanced line length
+   at desktop. */
 .chairman {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: var(--s-5);
   align-items: start;
 }
+.chairman-solo { max-width: 76ch; }
 .chairman__quote { font-size: var(--fs-h3); font-weight: 600; color: var(--c-paper); line-height: var(--lh-head); }
-.chairman__sig { margin-top: var(--s-3); color: var(--c-secondary); font-size: var(--fs-small); font-weight: 600; }
+.chairman__sig { color: var(--c-secondary); font-size: var(--fs-small); font-weight: 600; }
 .chairman__body p { color: var(--c-gray); margin-bottom: var(--s-3); }
 @media (max-width: 900px) { .chairman { grid-template-columns: 1fr; } }
 
 /* Chairman photo + signature — Home "Leadership Perspective" section.
    Hidden until group.chairman.photo / .signature assets are supplied. */
+.chairman__portrait { display: flex; justify-content: center; }
+@media (max-width: 900px) { .chairman__portrait { justify-content: flex-start; } }
 .chairman__photo {
-  width: 84px;
-  height: 84px;
+  width: clamp(140px, 15vw, 200px);
+  height: clamp(140px, 15vw, 200px);
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: var(--s-3);
   border: 2px solid var(--c-gold-line);
+}
+/* Signature sits inline with the "— Role" line, at the end of the text
+   block, instead of floating alone beneath it. */
+.chairman__sig-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-3);
 }
 .chairman__signature {
   display: block;
-  max-width: 160px;
+  max-width: 140px;
   height: auto;
-  margin-top: var(--s-3);
 }
 
 /* ============================================================

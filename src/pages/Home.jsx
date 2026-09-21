@@ -50,20 +50,28 @@ export default function Home() {
       </section>
 
       <section className="section" id="chairmans-message">
-        <Reveal as="div" className="container" style={{ maxWidth: '68ch' }}>
-          <span className="eyebrow">{t(sections.leadership)}</span>
-          {group.chairman.photo && (
-            <img className="chairman__photo" src={group.chairman.photo} alt={t(group.chairman.role)} />
-          )}
-          <p className="chairman__quote">“{t(group.chairman.homeQuote)}”</p>
-          {group.chairman.paragraphs.map((p, i) => (
-            <p key={i} className="t-lead" style={{ marginTop: 'var(--s-3)' }}>{t(p)}</p>
-          ))}
-          <p className="chairman__sig">— {t(group.chairman.role)}</p>
-          {group.chairman.signature && (
-            <img className="chairman__signature" src={group.chairman.signature} alt="" />
-          )}
-        </Reveal>
+        <div className="container">
+          <Reveal as="div" className={group.chairman.photo ? 'chairman' : 'chairman-solo'}>
+            {group.chairman.photo && (
+              <div className="chairman__portrait">
+                <img className="chairman__photo" src={group.chairman.photo} alt={t(group.chairman.role)} />
+              </div>
+            )}
+            <div className="chairman__body">
+              <span className="eyebrow">{t(sections.leadership)}</span>
+              <p className="chairman__quote">“{t(group.chairman.homeQuote)}”</p>
+              {group.chairman.paragraphs.map((p, i) => (
+                <p key={i} className="t-lead" style={{ marginTop: 'var(--s-3)' }}>{t(p)}</p>
+              ))}
+              <div className="chairman__sig-row">
+                <p className="chairman__sig">— {t(group.chairman.role)}</p>
+                {group.chairman.signature && (
+                  <img className="chairman__signature" src={group.chairman.signature} alt="" />
+                )}
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       <section className="section section--alt" id="portfolio">
